@@ -1,1 +1,0 @@
-# qa-playwright-learning
