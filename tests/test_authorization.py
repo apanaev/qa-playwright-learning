@@ -1,5 +1,6 @@
 import pytest
-from playwright.sync_api import Page
+from playwright.sync_api import Page, Locator
+from pages.authorization_page import AuthorizationPage
 
 from config_reader import ConfigReader
 
@@ -9,3 +10,6 @@ def test_authorization(browser):
     context = browser.new_context(http_credentials={"username": config.login, "password": config.password})
     page = context.new_page()
     page.goto(config.main_url)
+
+    authorization_page = AuthorizationPage(page)
+    assert authorization_page.get_success_message() == "Congratulations! You must have the proper credentials."

@@ -11,6 +11,10 @@ class ConfigReader:
         return self.data["main_url"]
 
     @property
+    def alert_url(self):
+        return self.data["alert_url"]
+
+    @property
     def login(self):
         return self.data["login"]
 
