@@ -10,9 +10,6 @@ class ConfigReader:
     def main_url(self):
         return self.data["main_url"]
 
-    @property
-    def alert_url(self):
-        return self.data["alert_url"]
 
     @property
     def login(self):
@@ -21,6 +18,12 @@ class ConfigReader:
     @property
     def password(self):
         return self.data["password"]
+    @property
+    def alert_url(self):
+        return self.data["alert_url"]
+    @property
+    def context_menu_url(self):
+        return self.data["context_menu_url"]
 
 
 a = ConfigReader()
