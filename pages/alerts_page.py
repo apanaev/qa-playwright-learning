@@ -1,10 +1,11 @@
-from playwright.sync_api import Page, Locator
+from playwright.sync_api import Page, Locator,Dialog
+from pages.page_actions import PageActions
 
 
-class AlertPage:
+class AlertPage(PageActions):
 
     def __init__(self, page: Page):
-        self.page = page
+        super().__init__(page)
         self.alert_button: Locator = page.locator("//*[@onclick='jsAlert()']")
         self.confirm_button: Locator = page.locator("//*[@onclick='jsConfirm()']")
         self.prompt_button: Locator = page.locator("//*[@onclick='jsPrompt()']")
@@ -21,3 +22,7 @@ class AlertPage:
 
     def click_prompt_button(self):
         self.prompt_button.click()
+
+
+
+
