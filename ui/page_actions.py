@@ -10,7 +10,7 @@ class PageActions:
         logger.info("PageActions initialized")
 
     def goto_url(self, url):
-        logger.info(f"Navigated to: {url}")
+        logger.info(f"Перешёл на страницу: {url}")
         self.page.goto(url)
 
 

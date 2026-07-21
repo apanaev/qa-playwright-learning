@@ -18,7 +18,6 @@ def test_alerts(page: Page):
     page_alerts = AlertPage(page)
     page_alerts.goto_url(config.alert_url)
 
-    print()
     logger.info("========== ALERT ==========")
     dialog_message = page_alerts.run_and_accept_alert(page_alerts.click_alert_button)
     assert dialog_message == "I am a JS Alert"
