@@ -8,4 +8,4 @@ def test_slider(page:Page):
 
     config = ConfigReader()
     slider_page=Slider(page)
-    slider_page.g
+    slider_page.goto_url(config.slider_url)
