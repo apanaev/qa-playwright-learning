@@ -24,6 +24,9 @@ class ConfigReader:
     @property
     def context_menu_url(self):
         return self.data["context_menu_url"]
+    @property
+    def slider_url(self):
+        return self.data["slider_url"]
 
 
 a = ConfigReader()

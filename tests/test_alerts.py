@@ -8,13 +8,11 @@ from config_reader import ConfigReader
 
 logger = logging.getLogger("tests")
 
-
 def test_alerts(page: Page):
     fake = Faker("ru_RU")
     random_text = fake.password()
 
     config = ConfigReader()
-    # page.goto(config.alert_url)
     page_alerts = AlertPage(page)
     page_alerts.goto_url(config.alert_url)
 

@@ -5,16 +5,9 @@ from config_reader import ConfigReader
 
 
 def test_context_menu(page: Page):
-
-    def context_dialog(dialog: Dialog):
-        assert dialog.message == "You selected a context menu"
-        dialog.accept()
-
     config = ConfigReader()
-    page.goto(config.context_menu_url)
     context_menu_page = ContextMenuPage(page)
+    context_menu_page.goto_url(config.context_menu_url)
+    message = context_menu_page.run_and_accept_alert(context_menu_page.right_click_context_menu)
 
-    page.on("dialog", context_dialog)
-    context_menu_page.right_click_context_menu()
-    page.remove_listener("dialog", context_dialog)
-
+    assert message == "You selected a context menu"
