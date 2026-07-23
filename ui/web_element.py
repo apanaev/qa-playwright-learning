@@ -22,3 +22,7 @@ class WebElement:
     def right_click(self):
         logger.info(f"Кликаю правой кнопкой мыши на элемент: {self.description}")
         self.locator.click(button="right")
+
+    def press_button(self,button):
+        logger.info(f"На элементе: {self.description} нажимаю клавишу {button}")
+        self.locator.press(key=button)
