@@ -5,10 +5,15 @@ from pages.slider_page import SliderPage
 from config_reader import ConfigReader
 import random
 
-def test_slider(page:Page):
 
+def test_slider(page: Page):
     config = ConfigReader()
-    slider_page=SliderPage(page)
+    slider_page = SliderPage(page)
     slider_page.goto_url(config.slider_url)
 
-    slider_page.click_and_slide(random.randint(1,9))
+    random_press_right = random.randint(1, 9)
+
+    slider_page.focus_and_slide(random_press_right)
+    value_slide = float(slider_page.get_slider_value())
+
+    assert value_slide == 0.5 * random_press_right

@@ -2,6 +2,10 @@ from playwright.sync_api import Page
 from ui.page_actions import PageActions
 from ui.web_element import WebElement
 
+import logging
+
+logger = logging.getLogger("tests")
+
 
 class SliderPage(PageActions):
     def __init__(self, page: Page):
@@ -10,11 +14,10 @@ class SliderPage(PageActions):
                                          "Слайдер")
         self.slider_value = WebElement(page.locator("//*[@id='range']"), "Значение слайдера")
 
-    def click_and_slide(self,press_count):
-        self.slider_locator.click()
-        for i in range(0,press_count):
+    def focus_and_slide(self, press_count):
+        self.slider_locator.focus()
+        for i in range(0, press_count):
             self.slider_locator.press_button('ArrowRight')
 
-
-
-
+    def get_slider_value(self):
+        return self.slider_value.get_inner_text()

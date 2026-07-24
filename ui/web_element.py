@@ -23,6 +23,10 @@ class WebElement:
         logger.info(f"Кликаю правой кнопкой мыши на элемент: {self.description}")
         self.locator.click(button="right")
 
-    def press_button(self,button):
+    def press_button(self, button):
         logger.info(f"На элементе: {self.description} нажимаю клавишу {button}")
         self.locator.press(key=button)
+
+    def focus(self):
+        logger.info(f"Устанавливаю фокус на: {self.description}")
+        self.locator.focus()
