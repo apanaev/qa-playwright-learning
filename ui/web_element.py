@@ -30,3 +30,7 @@ class WebElement:
     def focus(self):
         logger.info(f"Устанавливаю фокус на: {self.description}")
         self.locator.focus()
+
+    def hover(self):
+        logger.info(f"Навожусь мышкой на: {self.description}")
+        self.locator.first.hover()

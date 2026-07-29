@@ -1,8 +1,9 @@
 {
   "main_url": "http://the-internet.herokuapp.com/basic_auth",
+  "login": "admin",
+  "password": "admin",
   "alert_url": "https://the-internet.herokuapp.com/javascript_alerts",
   "context_menu_url": "https://the-internet.herokuapp.com/context_menu",
   "slider_url": "https://the-internet.herokuapp.com/horizontal_slider",
-  "login": "admin",
-  "password": "admin"
+  "hovers_url": "https://the-internet.herokuapp.com/hovers"
 }
