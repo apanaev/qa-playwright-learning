@@ -11,14 +11,25 @@ class MultiWebElement:
         self.locator = locator
         self.description = description
 
+    def __iter__(self):
+        self._index=0
+        return self
+
+    def __next__(self):
+        if self._index>=self.count():
+            raise StopIteration
+        else:
+            element = self.nth(self._index)
+            self._index += 1
+            return element
 
     def count(self):
         count_element =self.locator.count()
-        logger.info(f"Найдено {count_element} элементов: {self.description} ")
+        # logger.info(f"Найдено {count_element} элементов: {self.description} ")
         return count_element
 
     def nth(self,index):
         locator = self.locator.nth(index)
-        locator = WebElement
-        return locator
+        element = WebElement(locator,f"{self.description}[{index}]")
+        return element
 
