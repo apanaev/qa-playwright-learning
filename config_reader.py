@@ -34,6 +34,10 @@ class ConfigReader:
     def hovers_url(self):
         return self.data["hovers_url"]
 
+    @property
+    def windows_url(self):
+        return self.data["windows_url"]
+
 
 a = ConfigReader()
 print(a.main_url, a.login, a.password)

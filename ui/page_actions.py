@@ -42,4 +42,16 @@ class PageActions:
         action()
         return message
 
+    def expect_new_page(self, action):
+        logger.info("Ожидаю появления новой страницы для выполнения действия")
+        with self.page.expect_popup() as popup_info:
+            action()
+        return popup_info.value
 
+    def bring_to_front(self, target_page: Page):
+        logger.info(f"Переключаюсь на вкладку: {target_page.url}")
+        target_page.bring_to_front()
+
+    def close_page(self, target_page: Page):
+        logger.info(f"Закрываю вкладку: {target_page.url}")
+        target_page.close()
