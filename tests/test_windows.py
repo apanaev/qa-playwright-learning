@@ -10,15 +10,13 @@ def test_windows(page: Page):
     windows_page = WindowsPage(page)
     windows_page.goto_url(config.windows_url)
 
-    new_page = windows_page.expect_new_page(windows_page.windows_locator.click)
-    new_page_text = WebElement(new_page.locator("//h3"), "Текст нового окна")
-    assert new_page_text.get_inner_text() == "New Window"
+    new_page, new_page_text = windows_page.open_new_window_and_get_text()
+    assert new_page_text == "New Window"
 
     windows_page.bring_to_front(page)
 
-    new_page2 = windows_page.expect_new_page(windows_page.windows_locator.click)
-    new_page2_text = WebElement(new_page2.locator("//h3"), "Текст нового окна")
-    assert new_page2_text.get_inner_text() == "New Window"
+    new_page2, new_page2_text = windows_page.open_new_window_and_get_text()
+    assert new_page2_text == "New Window"
 
     windows_page.bring_to_front(page)
 

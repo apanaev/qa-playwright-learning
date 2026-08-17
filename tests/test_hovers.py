@@ -8,6 +8,7 @@ def test_hovers(page: Page):
     hovers_page = HoversPage(page)
     hovers_page.goto_url(config.hovers_url)
 
+
     index = 0
     for avatar in hovers_page.avatar_locator:
         avatar.hover()

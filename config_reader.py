@@ -38,6 +38,12 @@ class ConfigReader:
     def windows_url(self):
         return self.data["windows_url"]
 
+    @property
+    def frames_url(self):
+        return self.data["frames_url"]
+    @property
+    def dynamic_contest_url(self):
+        return self.data["dynamic_content_url"]
 
 a = ConfigReader()
 print(a.main_url, a.login, a.password)
