@@ -9,8 +9,7 @@ def test_hovers(page: Page):
     hovers_page.goto_url(config.hovers_url)
 
 
-    index = 0
-    for avatar in hovers_page.avatar_locator:
+    for index, avatar in enumerate( hovers_page.avatar_locator):
         avatar.hover()
         user_name = hovers_page.get_user(index)
         assert user_name == f"name: user{index + 1}"
