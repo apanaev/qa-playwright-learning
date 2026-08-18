@@ -15,5 +15,6 @@ def test_slider(page: Page):
 
     slider_page.focus_and_slide(random_press_right)
     value_slide = float(slider_page.get_slider_value())
+    step = 0.5
 
-    assert value_slide == 0.5 * random_press_right
+    assert value_slide == step * random_press_right
