@@ -12,9 +12,5 @@ class HoversPage(PageActions):
         self.avatar_locator = MultiWebElement(page.locator("// img[ @ alt = 'User Avatar']"), "Аватар")
         self.user_name_locator = MultiWebElement(page.locator("(//h5)"), "Пользователь")
 
-    # def hover_avatar(self, index):
-    #     avatar = self.avatar_locator.nth(index)
-    #     avatar.hover()
-
     def get_user(self, index):
         return self.user_name_locator.nth(index).get_inner_text()

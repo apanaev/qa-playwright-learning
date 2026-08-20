@@ -34,3 +34,7 @@ class WebElement:
     def hover(self):
         logger.info(f"Навожусь мышкой на: {self.description}")
         self.locator.first.hover()
+
+    def scroll_into_view_if_needed(self) :
+        logger.info(f": Прокручиваю к элементу { self.description}, если он не виден")
+        self.locator.scroll_into_view_if_needed()

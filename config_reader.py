@@ -44,6 +44,7 @@ class ConfigReader:
     @property
     def dynamic_contest_url(self):
         return self.data["dynamic_content_url"]
+    @property
+    def scroll_url(self):
+        return self.data["scroll_url"]
 
-a = ConfigReader()
-print(a.main_url, a.login, a.password)

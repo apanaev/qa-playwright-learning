@@ -8,5 +8,6 @@
   "hovers_url": "https://the-internet.herokuapp.com/hovers",
   "windows_url": "https://the-internet.herokuapp.com/windows",
   "frames_url": "https://the-internet.herokuapp.com/nested_frames",
-  "dynamic_content_url": "https://the-internet.herokuapp.com/dynamic_content"
+  "dynamic_content_url": "https://the-internet.herokuapp.com/dynamic_content",
+  "scroll_url": "https://the-internet.herokuapp.com/infinite_scroll"
 }
