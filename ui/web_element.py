@@ -36,5 +36,9 @@ class WebElement:
         self.locator.first.hover()
 
     def scroll_into_view_if_needed(self) :
-        logger.info(f": Прокручиваю к элементу { self.description}, если он не виден")
+        logger.info(f"Прокручиваю к элементу { self.description}, если он не виден")
         self.locator.scroll_into_view_if_needed()
+
+    def set_input_file(self,path_file):
+        logger.info(f"Загружаю файл находящийся по пути {path_file}")
+        self.locator.set_input_files(path_file)

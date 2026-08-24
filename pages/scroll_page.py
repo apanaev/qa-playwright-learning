@@ -9,10 +9,10 @@ class ScrollPage(PageActions):
         self.scroll_locators = MultiWebElement(page.locator("//div[@class='jscroll-added']"), "Абзац")
 
     # def scroll_down(self):
-    #     self.page.keyboard.press("End")
+    #     self.page.keyboard.press("End") Альтернативный метод
     #     self.page.wait_for_timeout(500)
 
     def scroll_down(self):
-        a = self.scroll_locators.nth(-1)
-        a.scroll_into_view_if_needed()
-        self.page.wait_for_timeout(500)  ### да костыль, по другому у меня не получилось
+        last_paragraph = self.scroll_locators.nth(-1)
+        last_paragraph.scroll_into_view_if_needed()
+        self.page.wait_for_timeout(500)  ### да костыль, по другому этот метод выполняется слишком много раз

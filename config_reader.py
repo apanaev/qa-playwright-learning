@@ -41,10 +41,20 @@ class ConfigReader:
     @property
     def frames_url(self):
         return self.data["frames_url"]
+
     @property
     def dynamic_contest_url(self):
         return self.data["dynamic_content_url"]
+
     @property
     def scroll_url(self):
         return self.data["scroll_url"]
+    
+    @property
+    def file_upload_url(self):
+        return self.data["file_upload_url"]
+
+    @property
+    def download_url(self):
+        return self.data["download_url"]
 
