@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, Dialog
 import logging
-from playwright.sync_api import expect
+
 
 logger = logging.getLogger("tests")
 
@@ -60,6 +60,13 @@ class PageActions:
     def reload_page(self):
         logger.info(f"Перезагружу страницу {self.page.url}")
         self.page.reload()
+
+    def expect_download(self,action):
+        logger.info(f"Ожидаю скачивание файла")
+        with self.page.expect_download() as download_info:
+            action()
+        return  download_info.value
+
 
 
 
