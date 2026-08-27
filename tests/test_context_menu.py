@@ -1,5 +1,4 @@
-import pytest
-from playwright.sync_api import Page, Locator, Dialog
+from playwright.sync_api import Page
 from pages.context_menu_page import ContextMenuPage
 from config_reader import ConfigReader
 

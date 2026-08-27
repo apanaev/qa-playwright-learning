@@ -49,7 +49,7 @@ class ConfigReader:
     @property
     def scroll_url(self):
         return self.data["scroll_url"]
-    
+
     @property
     def file_upload_url(self):
         return self.data["file_upload_url"]
@@ -57,4 +57,3 @@ class ConfigReader:
     @property
     def download_url(self):
         return self.data["download_url"]
-

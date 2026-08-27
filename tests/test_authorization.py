@@ -1,5 +1,3 @@
-import pytest
-from playwright.sync_api import Page, Locator
 from pages.authorization_page import AuthorizationPage
 
 from config_reader import ConfigReader

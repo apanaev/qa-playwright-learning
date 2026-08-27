@@ -1,12 +1,12 @@
 from faker import Faker
-import pytest
-from playwright.sync_api import Page, Locator, Dialog
+from playwright.sync_api import Page
 
 import logging
 from pages.alerts_page import AlertPage
 from config_reader import ConfigReader
 
 logger = logging.getLogger("tests")
+
 
 def test_alerts(page: Page):
     fake = Faker("ru_RU")

@@ -1,4 +1,3 @@
-import pytest
 from playwright.sync_api import Page
 from pages.slider_page import SliderPage
 

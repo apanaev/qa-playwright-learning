@@ -4,6 +4,7 @@ from config_reader import ConfigReader
 from pages.file_upload_page import FileUpload
 from pathlib import Path
 
+
 def test_file_upload(page: Page):
     config = ConfigReader()
     file_upload_page = FileUpload(page)
@@ -14,6 +15,3 @@ def test_file_upload(page: Page):
     result_text = file_upload_page.set_input_file(path)
     filename = path.name
     assert result_text == filename
-
-
-

@@ -1,8 +1,6 @@
 from playwright.sync_api import Page
-
 from ui.multi_web_element import MultiWebElement
 from ui.page_actions import PageActions
-from ui.web_element import WebElement
 
 
 class HoversPage(PageActions):
