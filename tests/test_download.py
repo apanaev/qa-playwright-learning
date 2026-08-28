@@ -10,6 +10,8 @@ def test_download(page: Page):
 
     download_page.goto_url(config.download_url)
 
-    text_third_link, third_link = download_page.get_text_third_link_and_text()
+    third_link = download_page.get_link(2)
+    text_third_link = download_page.get_link_text(2)
+
     download_file = download_page.expect_download(third_link.click)
     assert download_file.suggested_filename == text_third_link

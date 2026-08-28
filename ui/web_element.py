@@ -42,3 +42,7 @@ class WebElement:
     def set_input_file(self, path_file):
         logger.info(f"Загружаю файл находящийся по пути {path_file}")
         self.locator.set_input_files(path_file)
+
+    def get_attribute(self,attribute):
+        logger.info(f"Получаю атрибут {attribute} с элемента {self.description}")
+        return self.locator.get_attribute(attribute)

@@ -1,17 +1,16 @@
 from playwright.sync_api import Page
-
+from playwright.sync_api import expect
 from config_reader import ConfigReader
 from pages.scroll_page import ScrollPage
 
 
-def test_scroll(page: Page):
+def test_scroll(page: Page):  # тест не рабочий без таймаута не получается победить,
     config = ConfigReader()
     scroll_page = ScrollPage(page)
     scroll_page.goto_url(config.scroll_url)
 
+
     count = scroll_page.scroll_locators.count()
     while count < 10:
         scroll_page.scroll_down()
-        # expect(scroll_page.scroll_locators.locator).not_to_have_count(count) Не рабочий метод оставил, чтоб показать что я пытался дождаться загрузки, и только потом считать абзацы
         count = scroll_page.scroll_locators.count()
-    assert count >= 10

@@ -18,3 +18,15 @@ class FramesPage(PageActions):
                 "//body"), "Right frame locator")
         self.bottom_frame_locator = WebElement(page.frame_locator("//frame[@name='frame-bottom']").locator("//body"),
                                                "Bottom frame locator")
+
+    def get_text_left_frame(self):
+        return self.left_frame_locator.get_inner_text()
+
+    def get_text_middle_frame(self):
+        return self.middle_frame_locator.get_inner_text()
+
+    def get_text_right_frame(self):
+        return self.right_frame_locator.get_inner_text()
+
+    def get_text_bottom_frame(self):
+        return self.bottom_frame_locator.get_inner_text()

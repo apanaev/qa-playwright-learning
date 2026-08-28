@@ -9,7 +9,7 @@ def test_frames(page: Page):
     frames_page = FramesPage(page)
     frames_page.goto_url(config.frames_url)
 
-    assert frames_page.left_frame_locator.get_inner_text() == "LEFT"
-    assert frames_page.middle_frame_locator.get_inner_text() == "MIDDLE"
-    assert frames_page.right_frame_locator.get_inner_text() == "RIGHT"
-    assert frames_page.bottom_frame_locator.get_inner_text() == "BOTTOM"
+    assert frames_page.get_text_left_frame() == "LEFT"
+    assert frames_page.get_text_middle_frame() == "MIDDLE"
+    assert frames_page.get_text_right_frame() == "RIGHT"
+    assert frames_page.get_text_bottom_frame() == "BOTTOM"

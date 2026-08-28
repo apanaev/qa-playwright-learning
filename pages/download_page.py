@@ -8,6 +8,8 @@ class DownloadPage(PageActions):
         super().__init__(page)
         self.links_locator = MultiWebElement(page.locator("//*[@id='content']//*[@href]"), "Список ссылок")
 
-    def get_text_third_link_and_text(self):
-        third_link = self.links_locator.nth(2)
-        return third_link.get_inner_text(), third_link
+    def get_link(self, index):
+        return self.links_locator.nth(index)
+
+    def get_link_text(self, index):
+        return self.links_locator.nth(index).get_inner_text()
