@@ -1,5 +1,4 @@
 from playwright.sync_api import Page
-from playwright.sync_api import expect
 from config_reader import ConfigReader
 from pages.scroll_page import ScrollPage
 

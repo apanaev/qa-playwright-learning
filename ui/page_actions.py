@@ -52,9 +52,9 @@ class PageActions:
         logger.info(f"Переключаюсь на вкладку: {target_page.url}")
         target_page.bring_to_front()
 
-    def close_page(self, target_page: Page):
-        logger.info(f"Закрываю вкладку: {target_page.url}")
-        target_page.close()
+    def close_page(self):
+        logger.info(f"Закрываю вкладку {self.page.url}")
+        self.page.close()
 
     def reload_page(self):
         logger.info(f"Перезагружу страницу {self.page.url}")

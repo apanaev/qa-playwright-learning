@@ -1,7 +1,6 @@
 from ui.multi_web_element import MultiWebElement
 from ui.page_actions import PageActions
-from playwright.sync_api import Page,expect
-
+from playwright.sync_api import Page, expect
 
 
 class ScrollPage(PageActions):
@@ -10,12 +9,12 @@ class ScrollPage(PageActions):
         self.scroll_locators = MultiWebElement(page.locator("//div[@class='jscroll-added']"), "Абзац")
 
     def scroll_down(self):
-
         count = self.scroll_locators.count()
-
         last_paragraph = self.scroll_locators.nth(-1)
         last_paragraph.scroll_into_view_if_needed()
-
-        expect(self.scroll_locators.locator).not_to_have_count(count)
-
-
+        try: # сделал блок try expect, без него одной прокрутки scroll_into_view_if_needed не хватает
+            expect(self.scroll_locators.locator).not_to_have_count(count)
+        except AssertionError:
+            last_paragraph = self.scroll_locators.nth(-1)
+            last_paragraph.scroll_into_view_if_needed()
+            expect(self.scroll_locators.locator).not_to_have_count(count)
