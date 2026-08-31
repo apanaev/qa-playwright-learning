@@ -1,5 +1,6 @@
-from playwright.sync_api import Locator
 import logging
+
+from playwright.sync_api import Locator
 
 from ui.web_element import WebElement
 

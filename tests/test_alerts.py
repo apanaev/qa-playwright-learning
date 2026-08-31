@@ -1,9 +1,10 @@
+import logging
+
 from faker import Faker
 from playwright.sync_api import Page
 
-import logging
-from pages.alerts_page import AlertPage
 from config_reader import ConfigReader
+from pages.alerts_page import AlertPage
 
 logger = logging.getLogger("tests")
 

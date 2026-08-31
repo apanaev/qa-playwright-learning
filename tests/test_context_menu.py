@@ -1,6 +1,7 @@
 from playwright.sync_api import Page
-from pages.context_menu_page import ContextMenuPage
+
 from config_reader import ConfigReader
+from pages.context_menu_page import ContextMenuPage
 
 
 def test_context_menu(page: Page):

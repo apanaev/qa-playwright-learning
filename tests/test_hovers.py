@@ -1,4 +1,5 @@
 from playwright.sync_api import Page
+
 from config_reader import ConfigReader
 from pages.hovers_page import HoversPage
 

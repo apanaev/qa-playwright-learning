@@ -1,6 +1,5 @@
-from pages.authorization_page import AuthorizationPage
-
 from config_reader import ConfigReader
+from pages.authorization_page import AuthorizationPage
 
 
 def test_authorization(browser):

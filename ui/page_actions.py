@@ -1,5 +1,6 @@
-from playwright.sync_api import Page, Dialog
 import logging
+
+from playwright.sync_api import Page, Dialog
 
 logger = logging.getLogger("tests")
 

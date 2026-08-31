@@ -1,8 +1,9 @@
+import logging
+
 from playwright.sync_api import Page
+
 from ui.page_actions import PageActions
 from ui.web_element import WebElement
-
-import logging
 
 logger = logging.getLogger("tests")
 

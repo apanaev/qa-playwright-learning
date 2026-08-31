@@ -1,6 +1,8 @@
 from playwright.sync_api import Page
+
 from config_reader import ConfigReader
 from pages.windows_page import WindowsPage
+
 
 def test_windows(page: Page):
     config = ConfigReader()
