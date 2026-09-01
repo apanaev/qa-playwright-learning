@@ -14,4 +14,5 @@ def test_download(page: Page):
     text_third_link = download_page.get_link_text(2)
 
     download_file = download_page.expect_download(third_link.click)
-    assert download_file.suggested_filename == text_third_link
+    file_name = download_file.suggested_filename
+    assert file_name == text_third_link, f"Ожидал: {text_third_link}, а получили: {file_name}"

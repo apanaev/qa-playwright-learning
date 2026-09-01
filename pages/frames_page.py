@@ -12,7 +12,7 @@ class FramesPage(PageActions):
                 "//body"), "Left frame locator")
         self.middle_frame_locator = WebElement(
             page.frame_locator("//frame[@name='frame-top']").frame_locator("//frame[@name='frame-middle']").locator(
-                "//div[@id='content']"), "Middle frame locator")
+                "//*[@id='content']"), "Middle frame locator")
 
         self.right_frame_locator = WebElement(
             page.frame_locator("//frame[@name='frame-top']").frame_locator("//frame[@name='frame-right']").locator(

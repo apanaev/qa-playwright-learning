@@ -28,12 +28,12 @@ def test_alerts(page: Page):
     dialog_message = page_alerts.run_and_accept_alert(page_alerts.click_confirm_button)
     assert dialog_message == "I am a JS Confirm", f"Ожидали: 'I am a JS Confirm', а получили:  {dialog_message}"
     result = page_alerts.get_result_text()
-    assert result == "You clicked: Ok", f"Ожидали: 'You clicked: Ok', а получили {result}"
+    assert result == "You clicked: Ok", f"Ожидали: 'You clicked: Ok', а получили: {result}"
     logger.info("")
 
     logger.info("========== PROMPT ==========")
     dialog_message = page_alerts.run_and_accept_prompt(page_alerts.click_prompt_button, random_text)
     assert dialog_message == "I am a JS prompt", f"Ожидали: 'I am a JS prompt', а получили:  {dialog_message}"
     result = page_alerts.get_result_text()
-    assert result == "You entered: " + random_text, f"Ожидали: You entered: {random_text}, а получили {result}"
+    assert result == "You entered: " + random_text, f"Ожидали: You entered: {random_text}, а получили: {result}"
     logger.info("")

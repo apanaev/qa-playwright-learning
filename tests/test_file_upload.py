@@ -19,4 +19,4 @@ def test_file_upload(page: Page):
     result_text = file_upload_page.set_input_file(path)
 
     filename = Path(path).name
-    assert result_text == filename
+    assert result_text == filename, f"Ожидали: {filename}', а получили: {result_text}"

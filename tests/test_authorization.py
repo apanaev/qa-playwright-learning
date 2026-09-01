@@ -9,4 +9,6 @@ def test_authorization(browser):
     authorization_page = AuthorizationPage(page)
     authorization_page.goto_url(config.main_url)
 
-    assert authorization_page.get_success_message() == "Congratulations! You must have the proper credentials."
+    message = authorization_page.get_success_message()
+
+    assert message == "Congratulations! You must have the proper credentials.",f"Ожидали: Congratulations! You must have the proper credentials., а получили: {message} "

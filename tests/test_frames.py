@@ -9,7 +9,12 @@ def test_frames(page: Page):
     frames_page = FramesPage(page)
     frames_page.goto_url(config.frames_url)
 
-    assert frames_page.get_text_left_frame() == "LEFT"
-    assert frames_page.get_text_middle_frame() == "MIDDLE"
-    assert frames_page.get_text_right_frame() == "RIGHT"
-    assert frames_page.get_text_bottom_frame() == "BOTTOM"
+    text_left_frame = frames_page.get_text_left_frame()
+    text_middle_frame = frames_page.get_text_middle_frame()
+    text_right_frame = frames_page.get_text_right_frame()
+    text_bottom_frame = frames_page.get_text_bottom_frame()
+
+    assert text_left_frame == "LEFT", f"Ожидали: 'LEFT',а получили: {text_left_frame}"
+    assert text_middle_frame == "MIDDLE", f"Ожидали: 'MIDDLE',а получили: {text_middle_frame}"
+    assert text_right_frame == "RIGHT", f"Ожидали: 'RIGHT',а получили: {text_right_frame}"
+    assert text_bottom_frame == "BOTTOM", f"Ожидали: 'BOTTOM',а получили: {text_bottom_frame}"

@@ -10,4 +10,4 @@ def test_context_menu(page: Page):
     context_menu_page.goto_url(config.context_menu_url)
     message = context_menu_page.run_and_accept_alert(context_menu_page.right_click_context_menu)
 
-    assert message == "You selected a context menu"
+    assert message == "You selected a context menu",f"Ожидали: You selected a context menu, а получили: {message}"

@@ -22,3 +22,12 @@ class SliderPage(PageActions):
 
     def get_slider_value(self):
         return self.slider_value.get_inner_text()
+
+    def get_slider_step(self):
+        return float(self.slider_locator.get_attribute("step"))
+
+    def get_min_value_slider(self):
+        return  float(self.slider_locator.get_attribute("min"))
+
+    def get_max_value_slider(self):
+        return  float(self.slider_locator.get_attribute("max"))

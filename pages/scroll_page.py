@@ -8,16 +8,13 @@ class ScrollPage(PageActions):
     def __init__(self, page: Page):
         super().__init__(page)
         self.scroll_locators = MultiWebElement(page.locator("//div[@class='jscroll-added']"), "Абзац")
+        self.iterr = 0
 
     def scroll_down(self):
-        count = self.scroll_locators.count()
+        self.iterr = self.iterr + 1
         last_paragraph = self.scroll_locators.nth(-1)
+        last_paragraph.wait_for_load_state()
         last_paragraph.scroll_into_view_if_needed()
-        try:  # сделал блок try expect, без него одной прокрутки scroll_into_view_if_needed не хватает
-            expect(self.scroll_locators.locator).not_to_have_count(count)
-        except AssertionError:  # заметил что чаще срабатывает этот блок, но почему понять не могу.
-            # вообще если использовать нажатие кнопки End, а не scroll_into_view_if_needed
-            # то тест проходит быстрее или если использовать явное ожидание
-            last_paragraph = self.scroll_locators.nth(-1)
-            last_paragraph.scroll_into_view_if_needed()
-            expect(self.scroll_locators.locator).not_to_have_count(count)
+
+    def count_paragraf(self):
+        return self.scroll_locators.count()

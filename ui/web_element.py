@@ -47,3 +47,7 @@ class WebElement:
     def get_attribute(self, attribute):
         logger.info(f"Получаю атрибут {attribute} с элемента {self.description}")
         return self.locator.get_attribute(attribute)
+
+    def wait_for_load_state(self):
+        logger.info(f"Ожидаю загрузки {self.description}")
+        self.locator.wait_for(state="attached")
