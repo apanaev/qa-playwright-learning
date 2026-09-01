@@ -11,14 +11,14 @@ def test_windows(page: Page):
 
     new_page = windows_page.open_new_window()
     new_page_text = new_page.get_text()
-    assert new_page_text == "New Window",f"Ожидали: 'New Window', а получили: {new_page_text}"
+    assert new_page_text == "New Window", f"Ожидали: 'New Window', а получили: {new_page_text}"
 
     windows_page.bring_to_front(page)
 
     new_page2 = windows_page.open_new_window()
     new_page2_text = new_page2.get_text()
 
-    assert new_page2_text == "New Window",f"Ожидали: 'New Window', а получили: {new_page2_text}"
+    assert new_page2_text == "New Window", f"Ожидали: 'New Window', а получили: {new_page2_text}"
 
     windows_page.bring_to_front(page)
 

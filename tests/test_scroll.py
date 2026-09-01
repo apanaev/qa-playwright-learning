@@ -9,10 +9,7 @@ def test_scroll(page: Page):
     scroll_page = ScrollPage(page)
     scroll_page.goto_url(config.scroll_url)
 
-    count = scroll_page.count_paragraf()
+    count = scroll_page.count_paragraph()
     while count < 10:
         scroll_page.scroll_down()
-        count = scroll_page.count_paragraf()
-
-    print(f"Метод scroll_page.scroll_down() запускается {scroll_page.iterr} раз")
-
+        count = scroll_page.count_paragraph()

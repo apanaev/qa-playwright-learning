@@ -15,7 +15,6 @@ def test_slider(page: Page):
     min_value_slider = slider_page.get_min_value_slider()
     max_value_slider = slider_page.get_max_value_slider()
 
-
     total_step_slider = (max_value_slider - min_value_slider) / step
     random_press_right = random.randint(1, int(total_step_slider) - 1)
 
