@@ -1,5 +1,5 @@
 {
-  "main_url": "http://the-internet.herokuapp.com/basic_auth",
+  "main_url": "https://the-internet.herokuapp.com/basic_auth",
   "login": "admin",
   "password": "admin",
   "alert_url": "https://the-internet.herokuapp.com/javascript_alerts",

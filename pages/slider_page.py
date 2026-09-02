@@ -11,8 +11,9 @@ logger = logging.getLogger("tests")
 class SliderPage(PageActions):
     def __init__(self, page: Page):
         super().__init__(page)
-        self.slider_locator = WebElement(page.locator("//div[@class='sliderContainer']//input[@type='range']"),
-                                         "Слайдер")
+        self.slider_locator = WebElement(
+            page.locator("//div[contains(@class, 'slider') and contains(@class, 'Container')]//input[@type='range']"),
+            "Слайдер")
         self.slider_value = WebElement(page.locator("//*[@id='range']"), "Значение слайдера")
 
     def focus_and_slide(self, press_count):

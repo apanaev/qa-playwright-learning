@@ -15,4 +15,5 @@ def tests_dynamic_content(page: Page):
         dynamic_content_page.reload_page()
         unique_images_count = dynamic_content_page.get_unique_images_count()
 
-    assert unique_images_count != 3, f"Ожидали: Хотя бы два одинаковых изображения среди 3, а получили:  {unique_images_count} уникальных значений"
+    assert unique_images_count != 3, (f"Ожидали: Хотя бы два одинаковых изображения среди 3, "
+                                      f"а получили:  {unique_images_count} уникальных значений")

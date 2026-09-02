@@ -21,7 +21,8 @@ def test_alerts(page: Page):
     dialog_message = page_alerts.run_and_accept_alert(page_alerts.click_alert_button)
     assert dialog_message == "I am a JS Alert", f"Ожидали: 'I am a JS Alert', а получили:  {dialog_message}"
     result = page_alerts.get_result_text()
-    assert result == "You successfully clicked an alert", f"Ожидали: 'You successfully clicked an alert', а получили: {result}"
+    assert result == "You successfully clicked an alert", (f"Ожидали: 'You successfully clicked an alert', "
+                                                           f"а получили: {result}")
     logger.info("")
 
     logger.info("========== CONFIRM ==========")
