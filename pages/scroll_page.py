@@ -10,18 +10,13 @@ class ScrollPage(PageActions):
         self.scroll_locators = MultiWebElement(page.locator("//div[contains(@class, 'jscroll')]"), "Абзац")
         self.footer = page.locator("#page-footer")
 
-        self.a = 0
-
     def scroll_down(self):
-        self.a = self.a + 1
         count_para = self.count_paragraph()
         future_paragraph = self.scroll_locators.nth(self.count_paragraph())
         while count_para == self.count_paragraph():
             self.footer.scroll_into_view_if_needed()
         else:
             future_paragraph.wait_for_attached_state()
-        print(f"Количество абзацев {self.count_paragraph()}")
-        print(f"scroll_down завершился {self.a} раз")
 
     def count_paragraph(self):
         return self.scroll_locators.count()
