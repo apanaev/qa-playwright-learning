@@ -11,13 +11,41 @@ class ScrollPage(PageActions):
                                                             "and contains(@class, 'added')]"), "Абзац")
         self.footer = page.locator("#page-footer")
 
-    def scroll_down(self):
-        next_paragraph = self.scroll_locators.nth(self.count_paragraph())
-        self.footer.scroll_into_view_if_needed()
-        self.footer.wait_for(state="visible")
-        print("1")
+        self.a = 0
 
-        next_paragraph.locator.wait_for(state="visible")
+    def scroll_down(self):
+        self.a = self.a + 1
+        # self.footer.wait_for(state="attached")
+        # next_paragraph = self.scroll_locators.nth(self.count_paragraph())
+        # self.footer.scroll_into_view_if_needed()
+        # self.footer.wait_for(state="attached")
+
+
+        # last_paragraph = self.scroll_locators.nth(-1)
+        # future_paragraph = self.scroll_locators.nth(self.count_paragraph())
+        # last_paragraph.wait_for_attached_state()
+        # self.footer.scroll_into_view_if_needed()
+        # future_paragraph.wait_for_attached_state()
+
+        count_paragraph = self.count_paragraph()
+        last_paragraph = self.scroll_locators.nth(-1)
+        # future_paragraph = self.scroll_locators.nth(count_paragraph)
+
+        # print(self.count_paragraph(),count_paragraph)
+        # if self.count_paragraph() != count_paragraph:
+        #     print("зашёл")
+        # else:
+        #     print("не зашёл")
+        last_paragraph.wait_for_attached_state()
+
+
+
+
+
+        print(f"Количество абзацев {self.count_paragraph()}")
+
+        # next_paragraph.locator.wait_for(state="visible", timeout=3000)
+        print(f"scroll_down завершился {self.a} раз")
 
     def count_paragraph(self):
         return self.scroll_locators.count()

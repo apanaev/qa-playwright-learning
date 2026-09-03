@@ -50,4 +50,4 @@ class WebElement:
 
     def wait_for_attached_state(self):
         logger.info(f"Ожидаю загрузки {self.description}")
-        self.locator.wait_for(state="attached")
+        self.locator.wait_for(state="attached", timeout=5000)
