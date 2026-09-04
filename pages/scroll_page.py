@@ -9,7 +9,7 @@ class ScrollPage(PageActions):
         super().__init__(page)
         self.scroll_locators = MultiWebElement(
             page.locator("//div[contains(@class, 'jscroll') and contains(@class, 'added') "
-                         "and normalize-space(text()) != '']"), "Абзац")
+                         "and normalize-space(text()) != '']"), "Параграф")
 
     def scroll_down(self):
         count = self.count_paragraph()
