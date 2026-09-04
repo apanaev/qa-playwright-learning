@@ -1,0 +1,15 @@
+{
+  "main_url": "https://the-internet.herokuapp.com/basic_auth",
+  "login": "admin",
+  "password": "admin",
+  "alert_url": "https://the-internet.herokuapp.com/javascript_alerts",
+  "context_menu_url": "https://the-internet.herokuapp.com/context_menu",
+  "slider_url": "https://the-internet.herokuapp.com/horizontal_slider",
+  "hovers_url": "https://the-internet.herokuapp.com/hovers",
+  "windows_url": "https://the-internet.herokuapp.com/windows",
+  "frames_url": "https://the-internet.herokuapp.com/nested_frames",
+  "dynamic_content_url": "https://the-internet.herokuapp.com/dynamic_content",
+  "scroll_url": "https://the-internet.herokuapp.com/infinite_scroll",
+  "file_upload_url": "https://the-internet.herokuapp.com/upload",
+  "download_url": "https://the-internet.herokuapp.com/download"
+}

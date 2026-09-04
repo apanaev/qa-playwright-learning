@@ -1,0 +1,59 @@
+import json
+
+
+class ConfigReader:
+    def __init__(self):
+        with open("config.json") as file:
+            self.data = json.load(file)
+
+    @property
+    def main_url(self):
+        return self.data["main_url"]
+
+    @property
+    def login(self):
+        return self.data["login"]
+
+    @property
+    def password(self):
+        return self.data["password"]
+
+    @property
+    def alert_url(self):
+        return self.data["alert_url"]
+
+    @property
+    def context_menu_url(self):
+        return self.data["context_menu_url"]
+
+    @property
+    def slider_url(self):
+        return self.data["slider_url"]
+
+    @property
+    def hovers_url(self):
+        return self.data["hovers_url"]
+
+    @property
+    def windows_url(self):
+        return self.data["windows_url"]
+
+    @property
+    def frames_url(self):
+        return self.data["frames_url"]
+
+    @property
+    def dynamic_contest_url(self):
+        return self.data["dynamic_content_url"]
+
+    @property
+    def scroll_url(self):
+        return self.data["scroll_url"]
+
+    @property
+    def file_upload_url(self):
+        return self.data["file_upload_url"]
+
+    @property
+    def download_url(self):
+        return self.data["download_url"]
